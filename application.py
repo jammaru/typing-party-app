@@ -3,16 +3,17 @@ import time
 import threading
 import random
 
-QUESTION = ["tkinter", 
-            "geometry", 
-            "widgets", 
-            "messagebox", 
-            "configure", 
-            "label", 
-            "column", 
-            "rowspan", 
-            "grid", 
-            "init"]
+word_list = [
+    "Technology", "Miracle", "Elephant", "Happiness", "Guitar", 
+    "Rainbow", "Adventure", "Butterfly", "Universe", "Chocolate", 
+    "Harmony", "Sunshine", "Mountain", "Whisper", "Freedom", 
+    "Treasure", "Symphony", "Journey", "Mystery", "Blossom", 
+    "Tranquility", "Infinity", "Serenity", "Dragonfly", "Radiance", 
+    "Carousel", "Wonderland", "Sparkle", "Enchantment", "Reflection", "Galaxy"
+]
+
+# 10個の単語をランダムに選択
+QUESTION = random.sample(word_list, k=10)
 
 class Application(QtWidgets.QWidget):
     def __init__(self):
