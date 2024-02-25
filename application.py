@@ -2,8 +2,16 @@ from PySide6 import QtWidgets, QtCore, QtGui
 import time
 import threading
 
-QUESTION = ["tkinter", "geometry", "widgets", "messagebox", "configure", 
-            "label", "column", "rowspan", "grid", "init"]
+QUESTION = ["", 
+            "geometry", 
+            "widgets", 
+            "messagebox", 
+            "configure", 
+            "label", 
+            "column", 
+            "rowspan", 
+            "grid", 
+            "init"]
 
 class Application(QtWidgets.QWidget):
     def __init__(self):
@@ -62,7 +70,7 @@ class Application(QtWidgets.QWidget):
             if self.index == len(QUESTION):
                 self.flg = False
                 self.q_label2.setText("終了！")
-                QtWidgets.QMessageBox.information(self, "リザルト", f"あなたのスコアは{self.correct_cnt}/{self.index}問正解です。\nクリアタイムは{self.second}秒です。")
+                QtWidgets.QMessageBox.information(self, "結果発表！", f"あなたのスコアは{self.correct_cnt}/{self.index}問正解です。\nクリアタイムは{self.second}秒です。おめでとうございます！")
                 QtCore.QCoreApplication.quit()
 
             self.q_label2.setText(QUESTION[self.index])
